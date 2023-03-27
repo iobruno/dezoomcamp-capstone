@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "dezoomcamp-capstone"
+version = "1.0.0"
+description = "T.B.D."
+authors = ["iobruno <bruno.ariev@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^3.6.1"
+
+[tool.yapf]
+based_on_style = "google"
+allow_multiline_lambdas = true
+blank_line_before_nested_class_or_def = true
+coalesce_brackets = true
+column_limit = 100
+split_before_bitwise_operator = true
+split_before_named_assigns = false
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
