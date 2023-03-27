@@ -242,7 +242,7 @@ terraform.rc
 ### DataTalks Data Engineering Zoomcamp ###
 
 # Docker volume for Kafka and ZooKeeper
-**/confluent-data/**
+**/volumes/**
 
 # Datasets
 **/*datasets/**
