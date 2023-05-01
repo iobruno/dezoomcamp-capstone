@@ -26,3 +26,17 @@ def fetch_trending_videos(region_code: str = "US",
         return items + fetch_trending_videos(page_token=data["nextPageToken"])
 
     return items
+
+
+def fetch_categories(region_code: str = "US"):
+    params = {"key": YT_API_KEY, "regionCode": region_code}
+    response = httpx.get(url="https://www.googleapis.com/youtube/v3/videoCategories",
+                         params=params)
+
+    data = response.json()
+    categories = [
+        (item["id"], item["snippet"]["title"])
+        for item in data["items"]
+    ]
+
+    return categories
