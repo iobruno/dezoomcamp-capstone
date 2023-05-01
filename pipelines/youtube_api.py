@@ -1,4 +1,3 @@
-import os
 from typing import List
 
 import httpx
@@ -8,7 +7,7 @@ from pipelines.youtube import Video, VideoCategory
 
 class YoutubeAPI:
 
-    def __init__(self, api_key: str = os.getenv("YT_API_KEY")):
+    def __init__(self, api_key: str):
         self.api_key = api_key
         self.endpoint = "https://www.googleapis.com/youtube/v3"
 
@@ -40,7 +39,8 @@ class YoutubeAPI:
             item.get("snippet", {}).get("title"),
             item.get("snippet", {}).get("categoryId"),
             item.get("snippet", {}).get("publishedAt"),
-            item.get("topicDetails", {}).get("topicCategories")
+            item.get("topicDetails", {}).get("topicCategories"),
+            region_code,
         ), items))
 
         return trending_videos
